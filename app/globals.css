@@ -164,10 +164,17 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 .video iframe { width: 100%; height: 100%; border: 0; }
 .mixes .btn { margin-top: 32px; }
 
-.about { border-top: 1px solid var(--line); }
+.about-wrap { position: relative; overflow: hidden; border-top: 1px solid var(--line); }
+.about { position: relative; z-index: 1; min-height: clamp(520px, 70vh, 760px); display: flex; flex-direction: column; justify-content: center; }
+.about-strip { position: absolute; inset: 0; overflow: hidden; display: flex; align-items: center; opacity: .55; -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 25%, #000 62%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, transparent 25%, #000 62%, #000 100%); }
+.about-strip-track { display: flex; gap: 16px; padding-right: 16px; height: clamp(200px, 24vw, 320px); width: max-content; animation: about-marquee 60s linear infinite; }
+.about-strip-track img { height: 100%; width: auto; aspect-ratio: 3 / 4; object-fit: cover; flex: none; border-radius: 4px; }
+@keyframes about-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .about-strip-track { animation: none; } }
 .about h2 { margin-bottom: 40px; }
-.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 6vw, 90px); }
-.about-grid p:first-child { font-family: var(--font-serif); font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.35; color: var(--ebony); max-width: 34ch; }
+.about-grid { max-width: 640px; }
+.about-text { display: grid; gap: 24px; }
+.about-text p:first-child { font-family: var(--font-serif); font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.35; color: var(--ebony); max-width: 34ch; }
 
 .book { text-align: center; max-width: none; background: var(--ivory); }
 .book h2, .book p { margin-inline: auto; }
@@ -290,6 +297,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 }
 
 @media (max-width: 820px) {
+  .about-strip { opacity: .3; }
   .destiny, .section-head, .about-grid { grid-template-columns: 1fr; }
   .cover { max-width: 460px; }
   .albums { grid-template-columns: 1fr; max-width: 460px; }

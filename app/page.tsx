@@ -55,6 +55,15 @@ const jsonLd = {
   ],
 };
 
+const aboutStrip = [
+  "/gallery/shadzo-1.jpg",
+  "/gallery/shadzo-2.jpg",
+  "/gallery/shadzo-3.jpg",
+  "/gallery/shadzo-4.jpg",
+  "/gallery/shadzo-5.jpg",
+  "/gallery/shadzo-6.jpg",
+];
+
 export default function Home() {
   return (
     <>
@@ -227,21 +236,32 @@ export default function Home() {
           </a>
         </section>
 
+        <div className="about-wrap">
+        <div className="about-strip" aria-hidden="true">
+          <div className="about-strip-track">
+            {[...aboutStrip, ...aboutStrip].map((src, i) => (
+              <Image key={i} src={src} alt="" width={300} height={400} sizes="300px" />
+            ))}
+          </div>
+        </div>
         <section id="about" className="section about">
           <h2>The ShadzO Experience</h2>
           <div className="about-grid" data-reveal>
-            <p>
-              RNPiano is amapiano with R&amp;B vocals: the bright, jazzy log
-              drums and piano of amapiano, carrying smooth R&amp;B singing on
-              top. It runs as a mix series, a record label and a night out,
-              from amapiano and R&amp;B evenings in Sandton to daytime
-              sessions by the water.
-            </p>
-            <p>
-              Don&rsquo;t dala. Come early, stay for the last chord.
-            </p>
+            <div className="about-text">
+              <p>
+                RNPiano is amapiano with R&amp;B vocals: the bright, jazzy log
+                drums and piano of amapiano, carrying smooth R&amp;B singing on
+                top. It runs as a mix series, a record label and a night out,
+                from amapiano and R&amp;B evenings in Sandton to daytime
+                sessions by the water.
+              </p>
+              <p>
+                Don&rsquo;t dala. Come early, stay for the last chord.
+              </p>
+            </div>
           </div>
         </section>
+        </div>
 
         <section id="book" className="section book">
           <h2 data-reveal>Book DJ ShadzO</h2>
