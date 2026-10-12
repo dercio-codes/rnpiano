@@ -247,8 +247,9 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 
 /* footer: a strip of keys */
 .footer { text-align: center; font-size: .85rem; color: var(--graphite); }
-.footer-keys { display: flex; height: 56px; border-top: 1px solid var(--line); }
-.footer-keys i { flex: 1; border-left: 1px solid var(--line); background: #fff; position: relative; }
+.footer-keys { overflow: hidden; height: 56px; border-top: 1px solid var(--line); }
+.footer-keys-track { display: flex; width: max-content; height: 100%; animation: keys-marquee 40s linear infinite; }
+.footer-keys i { flex: none; width: 36px; border-left: 1px solid var(--line); background: #fff; position: relative; }
 .footer-keys i:first-child { border-left: 0; }
 .footer-keys i:nth-child(7n+1)::after,
 .footer-keys i:nth-child(7n+2)::after,
@@ -259,7 +260,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
   background: var(--ebony); border-radius: 0 0 3px 3px;
 }
 .footer-keys i { transition: background .2s; }
-.footer p { padding: 24px var(--gutter) 32px; }
+.footer-logo { display: block; width: auto; height: 34px; margin: 28px auto 0; }
+.footer p { padding: 16px var(--gutter) 32px; }
+@keyframes keys-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .footer-keys-track { animation: none; } }
 
 /* scroll-driven + reveal motion (only when motion is welcome) */
 @media (prefers-reduced-motion: no-preference) {
@@ -276,9 +280,6 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
     transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
     transition-delay: calc(var(--i, 0) * 90ms);
   }
-  .fx .footer-keys[data-reveal] { opacity: 1; transform: none; }
-  .fx .footer-keys[data-reveal="in"] i { animation: key-press .6s var(--ease) both; animation-delay: calc(var(--i) * 28ms); }
-  @keyframes key-press { 0% { transform: none; } 40% { transform: translateY(5px); background: #fde7f4; } 100% { transform: none; } }
 
   @supports (animation-timeline: scroll()) {
     .hero h1 { animation: hero-recede linear both; animation-timeline: scroll(root); animation-range: 0 70vh; }

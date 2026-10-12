@@ -269,11 +269,20 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <div className="footer-keys" aria-hidden="true" data-reveal>
-          {Array.from({ length: 28 }).map((_, i) => (
-            <i key={i} style={{ "--i": i } as CSSProperties} />
-          ))}
+        <div className="footer-keys" aria-hidden="true">
+          <div className="footer-keys-track">
+            {Array.from({ length: 112 }).map((_, i) => (
+              <i key={i} />
+            ))}
+          </div>
         </div>
+        <Image
+          className="footer-logo"
+          src="/rnpiano-wordmark.png"
+          alt="RNPiano"
+          width={830}
+          height={195}
+        />
         <p>&copy; 2026 RNPiano &middot; DJ ShadzO</p>
       </footer>
     </>
