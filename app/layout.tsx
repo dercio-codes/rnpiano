@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Manrope } from "next/font/google";
 import { SITE, SITE_URL } from "@/lib/site";
+import RegisterSW from "@/components/RegisterSW";
 import "./globals.css";
 
 const display = Bodoni_Moda({
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
     "book a DJ Port Elizabeth",
   ],
   alternates: { canonical: "/" },
+  appleWebApp: { capable: true, title: "RNPiano", statusBarStyle: "default" },
   openGraph: {
     type: "website",
     siteName: SITE.name,
@@ -65,7 +67,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-ZA" className={`${display.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <RegisterSW />
+      </body>
     </html>
   );
 }
