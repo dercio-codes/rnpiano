@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "RNPiano | DJ ShadzO",
     short_name: "RNPiano",
-    description: "Amapiano smoothed with R&B, by DJ ShadzO.",
+    description: "Amapiano mixed with R&B vocals, by DJ ShadzO.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

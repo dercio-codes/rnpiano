@@ -93,7 +93,7 @@ export default function Home() {
             RN<span>Piano</span>
           </h1>
           <p className="hero-sub">
-            Amapiano, smoothed with R&amp;B. Durban roots, Johannesburg floors.
+            Amapiano grooves with R&amp;B vocals. Johannesburg-based, playing Durban, Cape Town, Gqeberha and all over South Africa.
           </p>
           <div className="hero-actions">
             <ListenMenu title="Destiny" apple={albums[0].apple} variant="solid" label="Listen now" />
@@ -231,10 +231,11 @@ export default function Home() {
           <h2>The ShadzO Experience</h2>
           <div className="about-grid" data-reveal>
             <p>
-              RNPiano is where amapiano&rsquo;s bright, jazzy log drums meet the
-              slow glide of R&amp;B. It runs as a mix series, a record label and
-              a night out, from piano and R&amp;B evenings in Sandton to
-              daytime sessions by the water.
+              RNPiano is amapiano with R&amp;B vocals: the bright, jazzy log
+              drums and piano of amapiano, carrying smooth R&amp;B singing on
+              top. It runs as a mix series, a record label and a night out,
+              from amapiano and R&amp;B evenings in Sandton to daytime
+              sessions by the water.
             </p>
             <p>
               Don&rsquo;t dala. Come early, stay for the last chord.
